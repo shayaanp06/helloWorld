@@ -13,6 +13,7 @@ h2 {
 /* Styles the table */
 table {
     border: 2px solid black;
+    border-color: black;
     border-collapse: collapse;
 }
 
@@ -23,7 +24,7 @@ td {
 }
 
 /* Styles the third paragraph using its ID */
-#third-paragraph {
+p#third-paragraph {
     background-color: lightgray;
     padding: 10px;
 }
