@@ -1,0 +1,40 @@
+/* Styles all paragraphs */
+p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Styles all level two headers */
+h2 {
+    font-family: Arial, sans-serif;
+    margin-top: 25px;
+}
+
+/* Styles the table */
+table {
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: 1px solid black;
+    padding: 8px;
+}
+
+/* Styles the third paragraph using its ID */
+#third-paragraph {
+    background-color: lightgray;
+    padding: 10px;
+}
+
+/* Styles the main title using a class */
+.main-title {
+    text-align: center;
+}
+
+/* Styles only images with the logo class */
+img.logo {
+    width: 267px;
+    height: 72px;
+}
