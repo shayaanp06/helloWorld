@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+
+{% block title %}Contact - Shayaan Paracha{% endblock %}
+
+{% block content %}
+
+    <h1 class="mb-4">Contact Shayaan Paracha</h1>
+
+    {% if submitted %}
+
+        <div class="alert alert-success">
+            <h2 class="h4">Thank you, {{ first_name }}!</h2>
+            <p class="mb-0">Your contact form was submitted successfully.</p>
+        </div>
+
+        <div class="card shadow-sm">
+            <div class="card-body">
+
+                <h2 class="h4">Your Submitted Information</h2>
+
+                <p>
+                    <strong>First Name:</strong>
+                    {{ first_name }}
+                </p>
+
+                <p>
+                    <strong>Last Name:</strong>
+                    {{ last_name }}
+                </p>
+
+                <p>
+                    <strong>Email Address:</strong>
+                    {{ email }}
+                </p>
+
+                <p>
+                    <strong>Message:</strong>
+                    {{ message }}
+                </p>
+
+                <a class="btn btn-primary" href="{{ url_for('contact') }}">
+                    Submit Another Response
+                </a>
+
+            </div>
+        </div>
+
+    {% else %}
+
+        <div class="card shadow-sm">
+            <div class="card-body p-4">
+
+                <p class="text-muted">
+                    Please complete the form below to contact me.
+                </p>
+
+                <form method="post" action="{{ url_for('contact') }}">
+
+                    <div class="mb-3">
+                        <label for="first_name" class="form-label">
+                            First Name
+                        </label>
+
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="first_name"
+                            name="first_name"
+                            required
+                        >
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="last_name" class="form-label">
+                            Last Name
+                        </label>
+
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="last_name"
+                            name="last_name"
+                            required
+                        >
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="email" class="form-label">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            class="form-control"
+                            id="email"
+                            name="email"
+                            required
+                        >
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="message" class="form-label">
+                            Message
+                        </label>
+
+                        <textarea
+                            class="form-control"
+                            id="message"
+                            name="message"
+                            rows="4"
+                            required
+                        ></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">
+                        Submit
+                    </button>
+
+                </form>
+
+            </div>
+        </div>
+
+    {% endif %}
+
+{% endblock %}
